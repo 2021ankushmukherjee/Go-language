@@ -10,7 +10,8 @@ import (
 func main() {
 
 	fmt.Println("This is handeler")
-	PerformGetRequest()
+	//PerformGetRequest()
+	PerformPostJsonRequest()
 
 }
 
@@ -40,5 +41,31 @@ func PerformGetRequest() {
 
 	//fmt.Println(content)
 	//fmt.Println(string(content))
+
+}
+
+func PerformPostJsonRequest() {
+
+	const myurl = "http://localhost:4000/postform"
+
+	requestBody := strings.NewReader(`
+		{
+			"coursename":"Go-lang",
+			"price":"0",
+		}
+	`)
+
+	response, err := http.Post(myurl, "application/json", requestBody)
+
+	if err != nil {
+
+		panic(err)
+	}
+
+	defer response.Body.Close()
+
+	content, _ := ioutil.ReadAll(response.Body)
+
+	fmt.Println(string(content))
 
 }
