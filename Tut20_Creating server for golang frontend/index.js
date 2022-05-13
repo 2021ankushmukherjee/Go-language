@@ -14,17 +14,17 @@ app.get("/", (req,res) =>{
     })
 })
 
-app.post("/", (req,res) =>{
+app.post("/post", (req,res) =>{
 
-    const name = req.body.name;
+    const myjson = req.body;
     
-    res.status(200).send(name)
+    res.status(200).send(myjson)
 });
 
 
 app.post("/postform", (req,res)=>{
 
-    res.status(200).send(req.body);
+    res.status(200).send(JSON.stringify(req.body));
 });
 
 
