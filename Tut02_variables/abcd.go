@@ -69,4 +69,9 @@ func main() {
 	fmt.Println(loginToken)
 	fmt.Printf("variable is of type: %T \n ", loginToken)
 
+	// var name string
+	// fmt.Println("enter your name ")
+	// fmt.Scanf("%v", &name)
+	// fmt.Println(name)
+
 }

@@ -5,6 +5,7 @@ import (
 	"sort"
 )
 
+// slicing is a property of arrays
 func main() {
 
 	fmt.Println("Welcome to slicing")
@@ -37,7 +38,7 @@ func main() {
 	fmt.Println(highScores)
 
 	sort.Ints(highScores)
-
+	// how to reverse this
 	fmt.Println(highScores)
 
 	fmt.Println(sort.IntsAreSorted(highScores)) // gives a boolean value
